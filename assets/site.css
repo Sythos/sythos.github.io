@@ -424,12 +424,92 @@ img {
 }
 
 .flag {
-  width: 1.6rem;
-  flex: 0 0 1.6rem;
-  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
-  font-size: 1.15rem;
-  line-height: 1;
-  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 1.55rem;
+  height: 1rem;
+  flex: 0 0 1.55rem;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 0.12rem;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 25%);
+  font-size: 0;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.flag::before,
+.flag::after {
+  position: absolute;
+  content: "";
+}
+
+.flag--us {
+  background: repeating-linear-gradient(to bottom, #b22234 0 0.154rem, #fff 0.154rem 0.308rem);
+}
+
+.flag--us::before {
+  top: 0;
+  left: 0;
+  width: 43%;
+  height: 54%;
+  background-color: #3c3b6e;
+  background-image: radial-gradient(circle, #fff 0 0.055rem, transparent 0.06rem);
+  background-size: 0.25rem 0.25rem;
+}
+
+.flag--de {
+  background: linear-gradient(to bottom, #000 0 33.333%, #dd0000 33.333% 66.666%, #ffce00 66.666%);
+}
+
+.flag--es {
+  background: linear-gradient(to bottom, #aa151b 0 25%, #f1bf00 25% 75%, #aa151b 75%);
+}
+
+.flag--fr {
+  background: linear-gradient(to right, #0055a4 0 33.333%, #fff 33.333% 66.666%, #ef4135 66.666%);
+}
+
+.flag--it {
+  background: linear-gradient(to right, #009246 0 33.333%, #fff 33.333% 66.666%, #ce2b37 66.666%);
+}
+
+.flag--jp::before {
+  inset: 0;
+  background: radial-gradient(circle at center, #bc002d 0 0.34rem, transparent 0.35rem);
+}
+
+.flag--kr {
+  background: radial-gradient(ellipse at center, #cd2e3a 0 0.18rem, #0047a0 0.18rem 0.32rem, transparent 0.33rem), #fff;
+}
+
+.flag--pt {
+  background: linear-gradient(to right, #046a38 0 38%, #da291c 38%);
+}
+
+.flag--pt::before {
+  top: 50%;
+  left: 38%;
+  width: 0.52rem;
+  height: 0.52rem;
+  transform: translate(-50%, -50%);
+  border: 0.1rem solid #ffcd00;
+  border-radius: 50%;
+}
+
+.flag--cn {
+  background: #de2910;
+}
+
+.flag--cn::before {
+  top: 0.15rem;
+  left: 0.2rem;
+  width: 0.32rem;
+  height: 0.32rem;
+  transform: rotate(18deg);
+  background: #ffde00;
+  clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 94%, 50% 72%, 21% 94%, 32% 57%, 2% 35%, 39% 35%);
 }
 
 .project-page {

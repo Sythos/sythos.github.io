@@ -81,11 +81,22 @@ jobs:
           }
 
           [xml]$sitemap = Get-Content -LiteralPath 'sitemap.xml' -Raw -Encoding UTF8
+          $sitemapRoot = $sitemap.DocumentElement
+          if ($sitemapRoot.LocalName -ne 'urlset' -or $sitemapRoot.NamespaceURI -ne 'http://www.sitemaps.org/schemas/sitemap/0.9') {
+            throw 'sitemap.xml must use the standard Sitemap urlset namespace.'
+          }
           $ns = [System.Xml.XmlNamespaceManager]::new($sitemap.NameTable)
           $ns.AddNamespace('sm', 'http://www.sitemaps.org/schemas/sitemap/0.9')
           $urls = @($sitemap.SelectNodes('//sm:url', $ns))
           if ($urls.Count -ne $expectedCount) { throw "Sitemap has $($urls.Count) URLs; expected $expectedCount." }
           foreach ($url in $urls) {
+            $elements = @($url.SelectNodes('*'))
+            if (($elements | Where-Object { $_.NamespaceURI -ne 'http://www.sitemaps.org/schemas/sitemap/0.9' }).Count -ne 0) {
+              throw "Sitemap entry contains a non-standard extension: $($url.loc)"
+            }
+            if (($elements | ForEach-Object { $_.LocalName }) -join ',' -ne 'loc,lastmod,changefreq') {
+              throw "Sitemap entry must contain loc, lastmod and changefreq in standard order: $($url.loc)"
+            }
             if ($url.loc -notmatch '^https://sythos\.github\.io/') { throw "Non-canonical sitemap URL: $($url.loc)" }
             if ($url.loc -match '/projects/sythos\.github\.io/') { throw 'Self repository leaked into sitemap.' }
             if ($url.changefreq -ne 'daily') { throw "Non-daily changefreq: $($url.loc)" }

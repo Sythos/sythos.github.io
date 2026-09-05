@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sythos.github.io/</loc>
     <lastmod>2026-09-05</lastmod>
@@ -7,541 +7,181 @@
   </url>
   <url>
     <loc>https://sythos.github.io/projects/JS_Barcode_Universal/</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/JS_Barcode_Universal/index.de_DE.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/JS_Barcode_Universal/index.es_ES.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/JS_Barcode_Universal/index.fr_FR.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/JS_Barcode_Universal/index.it_IT.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/JS_Barcode_Universal/index.ja_JP.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/JS_Barcode_Universal/index.ko_KR.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/JS_Barcode_Universal/index.pt_PT.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/JS_Barcode_Universal/index.zh_CN.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/JS_Barcode_Universal/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/GuloGulo/</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/GuloGulo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/GuloGulo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/GuloGulo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/GuloGulo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/GuloGulo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/GuloGulo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/GuloGulo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/GuloGulo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/GuloGulo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/GuloGulo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/GuloGulo/index.de_DE.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/GuloGulo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/GuloGulo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/GuloGulo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/GuloGulo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/GuloGulo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/GuloGulo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/GuloGulo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/GuloGulo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/GuloGulo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/GuloGulo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/GuloGulo/index.es_ES.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/GuloGulo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/GuloGulo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/GuloGulo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/GuloGulo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/GuloGulo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/GuloGulo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/GuloGulo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/GuloGulo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/GuloGulo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/GuloGulo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/GuloGulo/index.fr_FR.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/GuloGulo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/GuloGulo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/GuloGulo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/GuloGulo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/GuloGulo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/GuloGulo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/GuloGulo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/GuloGulo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/GuloGulo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/GuloGulo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/GuloGulo/index.it_IT.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/GuloGulo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/GuloGulo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/GuloGulo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/GuloGulo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/GuloGulo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/GuloGulo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/GuloGulo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/GuloGulo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/GuloGulo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/GuloGulo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/GuloGulo/index.ja_JP.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/GuloGulo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/GuloGulo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/GuloGulo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/GuloGulo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/GuloGulo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/GuloGulo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/GuloGulo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/GuloGulo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/GuloGulo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/GuloGulo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/GuloGulo/index.ko_KR.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/GuloGulo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/GuloGulo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/GuloGulo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/GuloGulo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/GuloGulo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/GuloGulo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/GuloGulo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/GuloGulo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/GuloGulo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/GuloGulo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/GuloGulo/index.pt_PT.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/GuloGulo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/GuloGulo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/GuloGulo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/GuloGulo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/GuloGulo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/GuloGulo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/GuloGulo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/GuloGulo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/GuloGulo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/GuloGulo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/GuloGulo/index.zh_CN.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/GuloGulo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/GuloGulo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/GuloGulo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/GuloGulo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/GuloGulo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/GuloGulo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/GuloGulo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/GuloGulo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/GuloGulo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/GuloGulo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/BZFlag-Web/</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/BZFlag-Web/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/BZFlag-Web/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/BZFlag-Web/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/BZFlag-Web/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/BZFlag-Web/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/BZFlag-Web/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/BZFlag-Web/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/BZFlag-Web/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/BZFlag-Web/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/BZFlag-Web/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/BZFlag-Web/index.de_DE.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/BZFlag-Web/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/BZFlag-Web/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/BZFlag-Web/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/BZFlag-Web/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/BZFlag-Web/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/BZFlag-Web/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/BZFlag-Web/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/BZFlag-Web/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/BZFlag-Web/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/BZFlag-Web/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/BZFlag-Web/index.es_ES.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/BZFlag-Web/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/BZFlag-Web/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/BZFlag-Web/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/BZFlag-Web/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/BZFlag-Web/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/BZFlag-Web/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/BZFlag-Web/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/BZFlag-Web/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/BZFlag-Web/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/BZFlag-Web/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/BZFlag-Web/index.fr_FR.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/BZFlag-Web/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/BZFlag-Web/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/BZFlag-Web/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/BZFlag-Web/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/BZFlag-Web/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/BZFlag-Web/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/BZFlag-Web/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/BZFlag-Web/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/BZFlag-Web/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/BZFlag-Web/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/BZFlag-Web/index.it_IT.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/BZFlag-Web/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/BZFlag-Web/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/BZFlag-Web/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/BZFlag-Web/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/BZFlag-Web/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/BZFlag-Web/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/BZFlag-Web/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/BZFlag-Web/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/BZFlag-Web/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/BZFlag-Web/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/BZFlag-Web/index.ja_JP.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/BZFlag-Web/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/BZFlag-Web/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/BZFlag-Web/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/BZFlag-Web/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/BZFlag-Web/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/BZFlag-Web/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/BZFlag-Web/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/BZFlag-Web/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/BZFlag-Web/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/BZFlag-Web/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/BZFlag-Web/index.ko_KR.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/BZFlag-Web/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/BZFlag-Web/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/BZFlag-Web/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/BZFlag-Web/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/BZFlag-Web/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/BZFlag-Web/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/BZFlag-Web/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/BZFlag-Web/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/BZFlag-Web/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/BZFlag-Web/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/BZFlag-Web/index.pt_PT.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/BZFlag-Web/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/BZFlag-Web/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/BZFlag-Web/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/BZFlag-Web/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/BZFlag-Web/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/BZFlag-Web/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/BZFlag-Web/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/BZFlag-Web/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/BZFlag-Web/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/BZFlag-Web/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/BZFlag-Web/index.zh_CN.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/BZFlag-Web/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/BZFlag-Web/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/BZFlag-Web/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/BZFlag-Web/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/BZFlag-Web/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/BZFlag-Web/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/BZFlag-Web/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/BZFlag-Web/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/BZFlag-Web/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/BZFlag-Web/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/bzo/</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/bzo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/bzo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/bzo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/bzo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/bzo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/bzo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/bzo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/bzo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/bzo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/bzo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/bzo/index.de_DE.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/bzo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/bzo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/bzo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/bzo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/bzo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/bzo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/bzo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/bzo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/bzo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/bzo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/bzo/index.es_ES.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/bzo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/bzo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/bzo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/bzo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/bzo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/bzo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/bzo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/bzo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/bzo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/bzo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/bzo/index.fr_FR.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/bzo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/bzo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/bzo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/bzo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/bzo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/bzo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/bzo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/bzo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/bzo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/bzo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/bzo/index.it_IT.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/bzo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/bzo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/bzo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/bzo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/bzo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/bzo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/bzo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/bzo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/bzo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/bzo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/bzo/index.ja_JP.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/bzo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/bzo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/bzo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/bzo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/bzo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/bzo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/bzo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/bzo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/bzo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/bzo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/bzo/index.ko_KR.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/bzo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/bzo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/bzo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/bzo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/bzo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/bzo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/bzo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/bzo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/bzo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/bzo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/bzo/index.pt_PT.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/bzo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/bzo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/bzo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/bzo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/bzo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/bzo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/bzo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/bzo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/bzo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/bzo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sythos.github.io/projects/bzo/index.zh_CN.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/bzo/" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://sythos.github.io/projects/bzo/index.de_DE.html" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://sythos.github.io/projects/bzo/index.es_ES.html" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://sythos.github.io/projects/bzo/index.fr_FR.html" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://sythos.github.io/projects/bzo/index.it_IT.html" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://sythos.github.io/projects/bzo/index.ja_JP.html" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://sythos.github.io/projects/bzo/index.ko_KR.html" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://sythos.github.io/projects/bzo/index.pt_PT.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://sythos.github.io/projects/bzo/index.zh_CN.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/bzo/" />
     <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
   </url>

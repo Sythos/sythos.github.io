@@ -1,6 +1,10 @@
 name: IndexNow submission
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'sitemap.xml'
   workflow_dispatch:
 
 permissions:
@@ -14,13 +18,33 @@ jobs:
   submit:
     name: Submit canonical URLs
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: Check out deployed revision
         uses: actions/checkout@v7
         with:
           persist-credentials: false
+
+      - name: Wait for the matching GitHub Pages deployment
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected_hash="$(sha256sum sitemap.xml | awk '{print $1}')"
+          sitemap_url="https://sythos.github.io/sitemap.xml"
+          key_url="https://sythos.github.io/5d906a45176348999c9612db8d2118a0.txt"
+          for attempt in $(seq 1 60); do
+            live_hash="$(curl --fail --silent --show-error --location --max-time 20 "$sitemap_url" | sha256sum | awk '{print $1}')" || live_hash=''
+            key_status="$(curl --silent --show-error --location --max-time 20 --output /dev/null --write-out '%{http_code}' "$key_url")" || key_status=''
+            if [[ "$live_hash" == "$expected_hash" && "$key_status" == '200' ]]; then
+              echo "GitHub Pages serves the committed sitemap and key file."
+              exit 0
+            fi
+            echo "Waiting for Pages deployment, attempt $attempt of 60."
+            sleep 10
+          done
+          echo 'GitHub Pages did not serve the committed sitemap within the timeout.'
+          exit 1
 
       - name: Submit sitemap URLs to IndexNow
         env:

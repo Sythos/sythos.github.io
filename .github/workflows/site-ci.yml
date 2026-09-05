@@ -163,7 +163,7 @@ jobs:
               await expect(page.getByRole('heading', { level: 1 })).toHaveText(project);
               expect(await page.locator('meta[name="robots"]').getAttribute('content')).toBe('index, follow');
               await expect(page.locator('script')).toHaveCount(0);
-              await page.getByRole('button', { name: /language/i }).click();
+              await page.locator('summary').click();
               const languageLinks = page.locator('.language-menu a');
               const languageCount = await languageLinks.count();
               expect([1, 9]).toContain(languageCount);

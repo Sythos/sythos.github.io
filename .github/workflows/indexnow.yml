@@ -1,0 +1,97 @@
+name: IndexNow submission
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    name: Submit canonical URLs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out deployed revision
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Submit sitemap URLs to IndexNow
+        env:
+          INDEXNOW_ENDPOINT: https://api.indexnow.org/indexnow
+          INDEXNOW_HOST: sythos.github.io
+          INDEXNOW_KEY: 5d906a45176348999c9612db8d2118a0
+        shell: python
+        run: |
+          import json
+          import os
+          import sys
+          import urllib.error
+          import urllib.request
+          import xml.etree.ElementTree as ET
+          from urllib.parse import urlparse
+
+          namespace = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+          host = os.environ["INDEXNOW_HOST"]
+          key = os.environ["INDEXNOW_KEY"]
+          endpoint = os.environ["INDEXNOW_ENDPOINT"]
+          key_location = f"https://{host}/{key}.txt"
+
+          root = ET.parse("sitemap.xml").getroot()
+          if root.tag != f"{namespace}urlset":
+              raise SystemExit("sitemap.xml does not use the standard Sitemap namespace")
+
+          urls = []
+          seen = set()
+
+          def add_url(value):
+              value = (value or "").strip()
+              parsed = urlparse(value)
+              if parsed.scheme != "https" or parsed.hostname != host or parsed.fragment:
+                  raise SystemExit(f"Invalid same-host IndexNow URL: {value}")
+              if value not in seen:
+                  seen.add(value)
+                  urls.append(value)
+
+          for loc in root.findall(f"{namespace}url/{namespace}loc"):
+              add_url(loc.text)
+
+          # Keep the two project-site roots explicit for reduced/manual sitemaps.
+          add_url(f"https://{host}/JS_Barcode_Universal/")
+          add_url(f"https://{host}/GuloGulo/")
+
+          if not urls:
+              raise SystemExit("No URLs found for IndexNow")
+          if len(urls) > 10000:
+              raise SystemExit(f"IndexNow supports at most 10000 URLs per request, found {len(urls)}")
+
+          payload = {
+              "host": host,
+              "key": key,
+              "keyLocation": key_location,
+              "urlList": urls,
+          }
+          request = urllib.request.Request(
+              endpoint,
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json; charset=utf-8"},
+              method="POST",
+          )
+
+          try:
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  status = response.status
+          except urllib.error.HTTPError as error:
+              raise SystemExit(f"IndexNow returned HTTP {error.code}") from error
+          except urllib.error.URLError as error:
+              raise SystemExit(f"IndexNow request failed: {error.reason}") from error
+
+          if status not in (200, 202):
+              raise SystemExit(f"IndexNow returned unexpected HTTP {status}")
+          print(f"IndexNow accepted {len(urls)} canonical URLs with HTTP {status}")

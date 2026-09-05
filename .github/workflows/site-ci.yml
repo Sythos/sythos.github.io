@@ -62,6 +62,8 @@ jobs:
 
           $htmlFiles = @(Get-ChildItem -Path . -Filter '*.html' -File -Recurse | Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' })
           $expectedCount = 1 + ($projectNames.Count * $requiredLocaleFiles.Count)
+          $expectedExternalSitemapCount = 46 + 20
+          $expectedSitemapCount = $expectedCount + $expectedExternalSitemapCount
           if ($htmlFiles.Count -ne $expectedCount) {
             throw "Expected $expectedCount HTML files, found $($htmlFiles.Count)."
           }
@@ -88,7 +90,13 @@ jobs:
           $ns = [System.Xml.XmlNamespaceManager]::new($sitemap.NameTable)
           $ns.AddNamespace('sm', 'http://www.sitemaps.org/schemas/sitemap/0.9')
           $urls = @($sitemap.SelectNodes('//sm:url', $ns))
-          if ($urls.Count -ne $expectedCount) { throw "Sitemap has $($urls.Count) URLs; expected $expectedCount." }
+          if ($urls.Count -ne $expectedSitemapCount) { throw "Sitemap has $($urls.Count) URLs; expected $expectedSitemapCount." }
+          $locs = @($urls | ForEach-Object { [string]$_.loc })
+          if (@($locs | Select-Object -Unique).Count -ne $locs.Count) { throw 'Sitemap contains duplicate loc values.' }
+          $barcodeDocs = @($locs | Where-Object { $_ -match '^https://sythos\.github\.io/JS_Barcode_Universal/' })
+          $guloDocs = @($locs | Where-Object { $_ -match '^https://sythos\.github\.io/GuloGulo/' })
+          if ($barcodeDocs.Count -ne 46) { throw "Sitemap has $($barcodeDocs.Count) JS Barcode Pages URLs; expected 46." }
+          if ($guloDocs.Count -ne 20) { throw "Sitemap has $($guloDocs.Count) GuloGulo Pages URLs; expected 20." }
           foreach ($url in $urls) {
             $elements = @($url.SelectNodes('*'))
             if (($elements | Where-Object { $_.NamespaceURI -ne 'http://www.sitemaps.org/schemas/sitemap/0.9' }).Count -ne 0) {
@@ -102,6 +110,11 @@ jobs:
             if ($url.changefreq -ne 'daily') { throw "Non-daily changefreq: $($url.loc)" }
             if ([string]::IsNullOrWhiteSpace([string]$url.lastmod)) { throw "Missing lastmod: $($url.loc)" }
           }
+
+          $indexNowKey = '5d906a45176348999c9612db8d2118a0'
+          $indexNowKeyPath = "$indexNowKey.txt"
+          if (-not (Test-Path -LiteralPath $indexNowKeyPath -PathType Leaf)) { throw "Missing IndexNow key file: $indexNowKeyPath" }
+          if ((Get-Content -LiteralPath $indexNowKeyPath -Raw -Encoding UTF8).Trim() -ne $indexNowKey) { throw 'IndexNow key file content does not match its filename.' }
 
           if (Get-ChildItem -Path . -Filter '*.js' -File -Recurse | Where-Object { $_.FullName -notmatch '[\\/]\.github[\\/]' -and $_.FullName -notmatch '[\\/]\.git[\\/]' }) {
             throw 'JavaScript found in the published site.'

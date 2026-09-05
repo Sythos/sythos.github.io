@@ -1,0 +1,218 @@
+name: Static site CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: HTML and Playwright
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Validate static HTML and SEO
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $projectNames = @('JS_Barcode_Universal', 'GuloGulo', 'BZFlag-Web', 'bzo')
+          $localeFiles = @(
+            'index.html',
+            'index.de_DE.html',
+            'index.es_ES.html',
+            'index.fr_FR.html',
+            'index.it_IT.html',
+            'index.ja_JP.html',
+            'index.ko_KR.html',
+            'index.pt_PT.html',
+            'index.zh_CN.html'
+          )
+
+          if (Test-Path -LiteralPath 'projects/sythos.github.io') {
+            throw 'The sythos.github.io repository must not appear in generated content.'
+          }
+
+          $hasLocalization = Test-Path -LiteralPath 'projects/JS_Barcode_Universal/index.de_DE.html'
+          $requiredLocaleFiles = if ($hasLocalization) { $localeFiles } else { @('index.html') }
+          foreach ($projectName in $projectNames) {
+            foreach ($fileName in $requiredLocaleFiles) {
+              $path = Join-Path "projects/$projectName" $fileName
+              if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+                throw "Missing required page: $path"
+              }
+            }
+          }
+
+          $htmlFiles = @(Get-ChildItem -Path . -Filter '*.html' -File -Recurse | Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' })
+          $expectedCount = 1 + ($projectNames.Count * $requiredLocaleFiles.Count)
+          if ($htmlFiles.Count -ne $expectedCount) {
+            throw "Expected $expectedCount HTML files, found $($htmlFiles.Count)."
+          }
+
+          $forbidden = @('<script\b', 'javascript\s*:', '\son[a-z]+\s*=', '<iframe\b', '<object\b', '<embed\b')
+          foreach ($file in $htmlFiles) {
+            $content = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
+            if ($content -notmatch '(?i)<!doctype html>') { throw "Missing HTML5 doctype: $($file.FullName)" }
+            if ($content -notmatch '<html lang="[a-z]{2}-[A-Z]{2}"') { throw "Missing BCP 47 lang: $($file.FullName)" }
+            if ($content -notmatch '<title>[^<]+</title>') { throw "Missing title: $($file.FullName)" }
+            if ($content -notmatch '<meta name="description" content="[^\"]+">') { throw "Missing description: $($file.FullName)" }
+            if ($content -notmatch '<meta name="robots" content="index, follow">') { throw "Missing index/follow: $($file.FullName)" }
+            if ($content -notmatch '<link rel="canonical" href="https://sythos\.github\.io/[^\"]*">') { throw "Missing canonical: $($file.FullName)" }
+            foreach ($pattern in $forbidden) {
+              if ($content -match $pattern) { throw "Forbidden runtime content '$pattern': $($file.FullName)" }
+            }
+          }
+
+          [xml]$sitemap = Get-Content -LiteralPath 'sitemap.xml' -Raw -Encoding UTF8
+          $ns = [System.Xml.XmlNamespaceManager]::new($sitemap.NameTable)
+          $ns.AddNamespace('sm', 'http://www.sitemaps.org/schemas/sitemap/0.9')
+          $urls = @($sitemap.SelectNodes('//sm:url', $ns))
+          if ($urls.Count -ne $expectedCount) { throw "Sitemap has $($urls.Count) URLs; expected $expectedCount." }
+          foreach ($url in $urls) {
+            if ($url.loc -notmatch '^https://sythos\.github\.io/') { throw "Non-canonical sitemap URL: $($url.loc)" }
+            if ($url.loc -match '/projects/sythos\.github\.io/') { throw 'Self repository leaked into sitemap.' }
+            if ($url.changefreq -ne 'daily') { throw "Non-daily changefreq: $($url.loc)" }
+            if ([string]::IsNullOrWhiteSpace([string]$url.lastmod)) { throw "Missing lastmod: $($url.loc)" }
+          }
+
+          if (Get-ChildItem -Path . -Filter '*.js' -File -Recurse | Where-Object { $_.FullName -notmatch '[\\/]\.github[\\/]' -and $_.FullName -notmatch '[\\/]\.git[\\/]' }) {
+            throw 'JavaScript found in the published site.'
+          }
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          package-manager-cache: false
+
+      - name: Install Playwright in temporary workspace
+        shell: bash
+        run: |
+          mkdir -p /tmp/sythos-site-ci
+          cd /tmp/sythos-site-ci
+          npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.63.0
+          npx playwright install --with-deps chromium
+
+      - name: Create temporary browser tests
+        shell: bash
+        run: |
+          cat > /tmp/sythos-site-ci/playwright.config.cjs <<'CONFIG'
+          const { defineConfig, devices } = require('@playwright/test');
+
+          module.exports = defineConfig({
+            testDir: '.',
+            testMatch: 'site.ci.js',
+            workers: 1,
+            reporter: 'line',
+            outputDir: 'playwright-results',
+            use: {
+              baseURL: 'http://127.0.0.1:4173',
+              screenshot: 'only-on-failure',
+              trace: 'retain-on-failure'
+            },
+            projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }]
+          });
+          CONFIG
+
+          cat > /tmp/sythos-site-ci/site.ci.js <<'TEST'
+          const { test, expect } = require('@playwright/test');
+
+          const projects = ['JS_Barcode_Universal', 'GuloGulo', 'BZFlag-Web', 'bzo'];
+
+          test('homepage exposes the ordered project index and verified Pages links', async ({ page }) => {
+            const errors = [];
+            page.on('console', message => {
+              if (message.type() === 'error') errors.push(message.text());
+            });
+            const response = await page.goto('/');
+            expect(response.status()).toBe(200);
+            await expect(page).toHaveTitle('Sythos — Open-source projects');
+            await expect(page.getByRole('heading', { level: 1 })).toHaveText('Open-source systems, built in public.');
+            const names = await page.locator('.project-summary h2').allTextContents();
+            expect(names).toEqual(projects);
+            await expect(page.getByText('sythos.github.io', { exact: true })).toHaveCount(0);
+            const pagesLinks = page.getByRole('link', { name: /View on GH Pages/ });
+            await expect(pagesLinks).toHaveCount(2);
+            expect(await pagesLinks.nth(0).getAttribute('href')).toBe('https://sythos.github.io/JS_Barcode_Universal/');
+            expect(await pagesLinks.nth(1).getAttribute('href')).toBe('https://sythos.github.io/GuloGulo/');
+            await expect(page.locator('script')).toHaveCount(0);
+            expect(errors).toEqual([]);
+          });
+
+          for (const project of projects) {
+            test(`${project} English page is static, indexable and accessible`, async ({ page }) => {
+              const response = await page.goto(`/projects/${encodeURIComponent(project)}/`);
+              expect(response.status()).toBe(200);
+              await expect(page.getByRole('heading', { level: 1 })).toHaveText(project);
+              expect(await page.locator('meta[name="robots"]').getAttribute('content')).toBe('index, follow');
+              await expect(page.locator('script')).toHaveCount(0);
+              await page.getByRole('button', { name: /language/i }).click();
+              const languageLinks = page.locator('.language-menu a');
+              const languageCount = await languageLinks.count();
+              expect([1, 9]).toContain(languageCount);
+              await expect(page.getByText(/by Sythos/)).toBeVisible();
+            });
+          }
+
+          test('mobile project layout has no horizontal overflow', async ({ page }) => {
+            await page.setViewportSize({ width: 390, height: 844 });
+            await page.goto('/projects/JS_Barcode_Universal/');
+            const overflow = await page.locator('html').evaluate(element => element.scrollWidth > element.clientWidth);
+            expect(overflow).toBe(false);
+            await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+          });
+          TEST
+
+      - name: Serve static site
+        shell: bash
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/sythos-site-http.log 2>&1 &
+          echo $! > /tmp/sythos-site-http.pid
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/sythos-site-http.log
+          exit 1
+
+      - name: Run Playwright
+        shell: bash
+        run: |
+          cd /tmp/sythos-site-ci
+          npx playwright test --config=playwright.config.cjs
+
+      - name: Stop static server
+        if: always()
+        shell: bash
+        run: |
+          if [[ -f /tmp/sythos-site-http.pid ]]; then
+            kill "$(cat /tmp/sythos-site-http.pid)" 2>/dev/null || true
+          fi
+
+      - name: Upload Playwright failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-failure-evidence
+          path: /tmp/sythos-site-ci/playwright-results
+          if-no-files-found: ignore
+          retention-days: 30

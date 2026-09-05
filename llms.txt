@@ -1,0 +1,14 @@
+# sythos.github.io
+
+> Sythos's static, script-free portfolio of public open-source projects.
+
+## Projects
+
+- [JS_Barcode_Universal](https://sythos.github.io/projects/JS_Barcode_Universal/): Sythos Barcode Universal is an open-source MIT JavaScript/TypeScript SDK for generating, detecting, decoding, and rendering 1D and 2D barcodes. It has zero runtime dependencies and runs in browsers, Web Workers, and Node.js or Bun. The repository ships readable source, ESM/IIFE bundles, and documentation covering the API, formats, image and camera workflows, examples, and platform guides. Source: https://github.com/Sythos/JS_Barcode_Universal. Documentation: https://sythos.github.io/JS_Barcode_Universal/.
+- [GuloGulo](https://sythos.github.io/projects/GuloGulo/): Gulo Gulo is a mail-first, tenant-isolated groupware platform providing secure webmail, calendar, and contacts. It targets cPanel, Plesk, and standalone Linux deployments from one TypeScript core, while Gulo Gulo owns tenant policy, identity, mail, DAV data, quotas, retention, and audit. Source: https://github.com/Sythos/GuloGulo. Documentation: https://sythos.github.io/GuloGulo/.
+- [BZFlag-Web](https://sythos.github.io/projects/BZFlag-Web/): BZFlag Web Client is an independent browser client and Node.js gateway for the BZFlag ecosystem. The client is a static HTML5 application whose TypeScript sources compile to browser-ready JavaScript; the gateway provides a narrow, policy-controlled WebSocket boundary to official BZFlag servers while preserving native TCP and UDP transports. The public implementation targets BZFlag/BZFS 2.4.31, supports WebGPU with WebGL2 fallback, and is neither an official BZFlag release nor a general-purpose proxy. Source: https://github.com/Sythos/BZFlag-Web.
+- [bzo](https://sythos.github.io/projects/bzo/): Battlezone Online is a real-time multiplayer tank game built with Node.js, WebSockets, and Three.js. Its documentation covers Docker and source installation, multi-architecture releases, public test servers, persistent maps, WebXR VR mode, controls, and AGPLv3 source availability. Sythos/bzo is a public fork of timriker/bzo. Source: https://github.com/Sythos/bzo.
+
+## Notes
+
+The homepage and default project pages use English (en-US). Localized project pages are linked explicitly and never selected through scripted redirects.

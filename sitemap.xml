@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://sythos.github.io/</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sythos.github.io/projects/JS_Barcode_Universal/</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/JS_Barcode_Universal/" />
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sythos.github.io/projects/GuloGulo/</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/GuloGulo/" />    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/GuloGulo/" />
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sythos.github.io/projects/BZFlag-Web/</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/BZFlag-Web/" />    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/BZFlag-Web/" />
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sythos.github.io/projects/bzo/</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://sythos.github.io/projects/bzo/" />    <xhtml:link rel="alternate" hreflang="x-default" href="https://sythos.github.io/projects/bzo/" />
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+</urlset>

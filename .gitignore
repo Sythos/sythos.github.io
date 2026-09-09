@@ -34,6 +34,8 @@
 # specific to how the project happens to be developed.
 tools/
 scripts/
+!.github/scripts/
+!.github/scripts/build-cloudflare.ps1
 test/
 tests/
 __tests__/
@@ -45,6 +47,7 @@ local/
 dev/
 tmp/
 temp/
+.cloudflare-pages/
 *.test.js
 *.test.mjs
 *.spec.js

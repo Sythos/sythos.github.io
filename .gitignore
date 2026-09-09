@@ -36,6 +36,7 @@ tools/
 scripts/
 !.github/scripts/
 !.github/scripts/build-cloudflare.ps1
+!.github/scripts/build-cloudflare.mjs
 test/
 tests/
 __tests__/

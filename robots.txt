@@ -3,3 +3,4 @@ Disallow:
 Allow: /
 
 Sitemap: https://sythos.github.io/sitemap.xml
+Sitemap: https://sythos.pages.dev/sitemap-github.xml

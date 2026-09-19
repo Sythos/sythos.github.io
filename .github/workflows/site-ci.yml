@@ -32,7 +32,8 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
-          $projectNames = @('JS_Barcode_Universal', 'GuloGulo', 'BZFlag-Web', 'bzo')
+          $projectNames = @('JS_Barcode_Universal', 'Cordiale', 'GuloGulo', 'BZFlag-Web', 'bzo')
+          $expectedProjectOrder = @('JS_Barcode_Universal', 'Cordiale', 'GuloGulo', 'BZFlag-Web', 'bzo')
           $localeFiles = @(
             'index.html',
             'index.de_DE.html',
@@ -58,6 +59,15 @@ jobs:
                 throw "Missing required page: $path"
               }
             }
+          }
+
+          $homepage = Get-Content -LiteralPath 'index.html' -Raw -Encoding UTF8
+          $homepageProjectOrder = @([regex]::Matches($homepage, '<h2><a href="projects/([^\"]+)/">([^<]+)</a></h2>') | ForEach-Object { $_.Groups[1].Value })
+          if (($homepageProjectOrder -join ',') -ne ($expectedProjectOrder -join ',')) {
+            throw "Homepage project order is incorrect: $($homepageProjectOrder -join ', ')."
+          }
+          if ($homepage -notmatch '<span class="project-link--unavailable">GH Pages not available</span>' -or $homepage -match 'https://sythos\.github\.io/Cordiale/') {
+            throw 'Cordiale must not advertise a GitHub Pages link.'
           }
 
           $htmlFiles = @(Get-ChildItem -Path . -Filter '*.html' -File -Recurse | Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' })
@@ -126,6 +136,43 @@ jobs:
           node-version: "24"
           package-manager-cache: false
 
+      - name: Build and verify Cloudflare Pages artifact
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $outputRoot = Join-Path $env:RUNNER_TEMP 'cloudflare-pages'
+          node .github/scripts/build-cloudflare.mjs $outputRoot
+          if ($LASTEXITCODE -ne 0) { throw 'Cloudflare Pages build failed.' }
+
+          $expectedProjectOrder = @('JS_Barcode_Universal', 'Cordiale', 'GuloGulo', 'BZFlag-Web', 'bzo')
+          $homepage = Get-Content -LiteralPath (Join-Path $outputRoot 'index.html') -Raw -Encoding UTF8
+          if ($homepage -notmatch '<link rel="canonical" href="https://sythos\.pages\.dev/">') {
+            throw 'Cloudflare homepage canonical URL is incorrect.'
+          }
+          $homepageProjectOrder = @([regex]::Matches($homepage, '<h2><a href="projects/([^\"]+)/">([^<]+)</a></h2>') | ForEach-Object { $_.Groups[1].Value })
+          if (($homepageProjectOrder -join ',') -ne ($expectedProjectOrder -join ',')) {
+            throw "Cloudflare homepage order is incorrect: $($homepageProjectOrder -join ', ')."
+          }
+          $cordialePage = Get-Content -LiteralPath (Join-Path $outputRoot 'projects/Cordiale/index.html') -Raw -Encoding UTF8
+          if ($cordialePage -notmatch 'https://github\.com/vjt/grappa-irc' -or $cordialePage -match 'https://sythos\.github\.io/Cordiale/') {
+            throw 'Cloudflare Cordiale page is missing its Grappa-IRC reference or has an unverified Pages link.'
+          }
+
+          [xml]$cloudflareSitemap = Get-Content -LiteralPath (Join-Path $outputRoot 'sitemap.xml') -Raw -Encoding UTF8
+          $namespace = [System.Xml.XmlNamespaceManager]::new($cloudflareSitemap.NameTable)
+          $namespace.AddNamespace('sm', 'http://www.sitemaps.org/schemas/sitemap/0.9')
+          $localLocations = @($cloudflareSitemap.SelectNodes('//sm:url/sm:loc', $namespace) | ForEach-Object { $_.InnerText })
+          $cordialeLocations = @($localLocations | Where-Object { $_ -match '^https://sythos\.pages\.dev/projects/Cordiale/' })
+          if ($localLocations.Count -ne 46 -or $cordialeLocations.Count -ne 9) {
+            throw "Cloudflare sitemap has $($localLocations.Count) local URLs and $($cordialeLocations.Count) Cordiale URLs; expected 46 and 9."
+          }
+
+          [xml]$githubPagesSitemap = Get-Content -LiteralPath (Join-Path $outputRoot 'sitemap-github.xml') -Raw -Encoding UTF8
+          $githubNamespace = [System.Xml.XmlNamespaceManager]::new($githubPagesSitemap.NameTable)
+          $githubNamespace.AddNamespace('sm', 'http://www.sitemaps.org/schemas/sitemap/0.9')
+          $githubLocations = @($githubPagesSitemap.SelectNodes('//sm:url/sm:loc', $githubNamespace))
+          if ($githubLocations.Count -ne 66) { throw "GitHub Pages sitemap has $($githubLocations.Count) URLs; expected 66." }
+
       - name: Install Playwright in temporary workspace
         shell: bash
         run: |
@@ -158,7 +205,7 @@ jobs:
           cat > /tmp/sythos-site-ci/site.ci.js <<'TEST'
           const { test, expect } = require('@playwright/test');
 
-          const projects = ['JS_Barcode_Universal', 'GuloGulo', 'BZFlag-Web', 'bzo'];
+          const projects = ['JS_Barcode_Universal', 'Cordiale', 'GuloGulo', 'BZFlag-Web', 'bzo'];
 
           test('homepage exposes the ordered project index and verified Pages links', async ({ page }) => {
             const errors = [];
@@ -176,6 +223,9 @@ jobs:
             await expect(pagesLinks).toHaveCount(2);
             expect(await pagesLinks.nth(0).getAttribute('href')).toBe('https://sythos.github.io/JS_Barcode_Universal/');
             expect(await pagesLinks.nth(1).getAttribute('href')).toBe('https://sythos.github.io/GuloGulo/');
+            const cordialeRow = page.locator('.project-row').nth(1);
+            await expect(cordialeRow.locator('.project-link--unavailable')).toHaveText('GH Pages not available');
+            await expect(cordialeRow.locator('.project-summary')).toContainText('Grappa-IRC');
             await expect(page.locator('script')).toHaveCount(0);
             expect(errors).toEqual([]);
           });
@@ -192,6 +242,11 @@ jobs:
               const languageCount = await languageLinks.count();
               expect([1, 9]).toContain(languageCount);
               await expect(page.getByText(/by Sythos/)).toBeVisible();
+              if (project === 'Cordiale') {
+                await expect(page.locator('.project-description')).toContainText('not raw IRC');
+                await expect(page.getByRole('link', { name: 'Grappa-IRC project' })).toHaveAttribute('href', 'https://github.com/vjt/grappa-irc');
+                await expect(page.getByRole('link', { name: /Documentation/ })).toHaveCount(0);
+              }
             });
           }
 

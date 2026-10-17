@@ -32,8 +32,8 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
-          $projectNames = @('JS_Barcode_Universal', 'Cordiale', 'Classeviva-Dashboard', 'GuloGulo', 'bzo')
-          $expectedProjectOrder = @('JS_Barcode_Universal', 'Cordiale', 'Classeviva-Dashboard', 'GuloGulo', 'bzo')
+          $projectNames = @('JS_Barcode_Universal', 'Cordiale', 'Classeviva-Dashboard', 'GuloGulo')
+          $expectedProjectOrder = @('JS_Barcode_Universal', 'Cordiale', 'Classeviva-Dashboard', 'GuloGulo')
           $localeFiles = @(
             'index.html',
             'index.de_DE.html',
@@ -66,7 +66,7 @@ jobs:
           if (($homepageProjectOrder -join ',') -ne ($expectedProjectOrder -join ',')) {
             throw "Homepage project order is incorrect: $($homepageProjectOrder -join ', ')."
           }
-          if ($homepage -notmatch '<span class="project-link--unavailable">GH Pages not available</span>' -or $homepage -match 'https://sythos\.github\.io/Cordiale/' -or $homepage -notmatch 'ClasseViva Dashboard' -or $homepage -match 'BZFlag') {
+          if ($homepage -notmatch '<span class="project-link--unavailable">GH Pages not available</span>' -or $homepage -match 'https://sythos\.github\.io/Cordiale/' -or $homepage -notmatch 'ClasseViva Dashboard' -or $homepage -match 'BZFlag|bzo') {
             throw 'Homepage contains an invalid project entry or Pages link.'
           }
 
@@ -144,7 +144,7 @@ jobs:
           node .github/scripts/build-cloudflare.mjs $outputRoot
           if ($LASTEXITCODE -ne 0) { throw 'Cloudflare Pages build failed.' }
 
-          $expectedProjectOrder = @('JS_Barcode_Universal', 'Cordiale', 'Classeviva-Dashboard', 'GuloGulo', 'bzo')
+          $expectedProjectOrder = @('JS_Barcode_Universal', 'Cordiale', 'Classeviva-Dashboard', 'GuloGulo')
           $homepage = Get-Content -LiteralPath (Join-Path $outputRoot 'index.html') -Raw -Encoding UTF8
           if ($homepage -notmatch '<link rel="canonical" href="https://sythos\.pages\.dev/">') {
             throw 'Cloudflare homepage canonical URL is incorrect.'
@@ -167,8 +167,8 @@ jobs:
           $namespace.AddNamespace('sm', 'http://www.sitemaps.org/schemas/sitemap/0.9')
           $localLocations = @($cloudflareSitemap.SelectNodes('//sm:url/sm:loc', $namespace) | ForEach-Object { $_.InnerText })
           $cordialeLocations = @($localLocations | Where-Object { $_ -match '^https://sythos\.pages\.dev/projects/Cordiale/' })
-          if ($localLocations.Count -ne 46 -or $cordialeLocations.Count -ne 9) {
-            throw "Cloudflare sitemap has $($localLocations.Count) local URLs and $($cordialeLocations.Count) Cordiale URLs; expected 46 and 9."
+          if ($localLocations.Count -ne 37 -or $cordialeLocations.Count -ne 9) {
+            throw "Cloudflare sitemap has $($localLocations.Count) local URLs and $($cordialeLocations.Count) Cordiale URLs; expected 37 and 9."
           }
 
           [xml]$githubPagesSitemap = Get-Content -LiteralPath (Join-Path $outputRoot 'sitemap-github.xml') -Raw -Encoding UTF8
@@ -209,14 +209,13 @@ jobs:
           cat > /tmp/sythos-site-ci/site.ci.js <<'TEST'
           const { test, expect } = require('@playwright/test');
 
-          const projects = ['JS_Barcode_Universal', 'Cordiale', 'Classeviva-Dashboard', 'GuloGulo', 'bzo'];
-          const projectDisplayNames = ['JS_Barcode_Universal', 'Cordiale', 'ClasseViva Dashboard', 'GuloGulo', 'bzo'];
+          const projects = ['JS_Barcode_Universal', 'Cordiale', 'Classeviva-Dashboard', 'GuloGulo'];
+          const projectDisplayNames = ['JS_Barcode_Universal', 'Cordiale', 'ClasseViva Dashboard', 'GuloGulo'];
           const projectTitles = new Map([
             ['JS_Barcode_Universal', 'JS_Barcode_Universal'],
             ['Cordiale', 'Cordiale'],
             ['Classeviva-Dashboard', 'ClasseViva Dashboard'],
             ['GuloGulo', 'GuloGulo'],
-            ['bzo', 'bzo'],
           ]);
 
           test('homepage exposes the ordered project index and verified Pages links', async ({ page }) => {

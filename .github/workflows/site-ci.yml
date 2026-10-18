@@ -72,7 +72,7 @@ jobs:
 
           $htmlFiles = @(Get-ChildItem -Path . -Filter '*.html' -File -Recurse | Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' })
           $expectedCount = 1 + ($projectNames.Count * $requiredLocaleFiles.Count)
-          $expectedExternalSitemapCount = 46 + 20
+          $expectedExternalSitemapCount = 46 + 20 + 3
           $expectedSitemapCount = $expectedCount + $expectedExternalSitemapCount
           if ($htmlFiles.Count -ne $expectedCount) {
             throw "Expected $expectedCount HTML files, found $($htmlFiles.Count)."
@@ -105,8 +105,10 @@ jobs:
           if (@($locs | Select-Object -Unique).Count -ne $locs.Count) { throw 'Sitemap contains duplicate loc values.' }
           $barcodeDocs = @($locs | Where-Object { $_ -match '^https://sythos\.github\.io/JS_Barcode_Universal/' })
           $guloDocs = @($locs | Where-Object { $_ -match '^https://sythos\.github\.io/GuloGulo/' })
+          $classevivaDocs = @($locs | Where-Object { $_ -match '^https://sythos\.github\.io/Classeviva-Dashboard/' })
           if ($barcodeDocs.Count -ne 46) { throw "Sitemap has $($barcodeDocs.Count) JS Barcode Pages URLs; expected 46." }
           if ($guloDocs.Count -ne 20) { throw "Sitemap has $($guloDocs.Count) GuloGulo Pages URLs; expected 20." }
+          if ($classevivaDocs.Count -ne 3) { throw "Sitemap has $($classevivaDocs.Count) Classeviva Dashboard Pages URLs; expected 3." }
           foreach ($url in $urls) {
             $elements = @($url.SelectNodes('*'))
             if (($elements | Where-Object { $_.NamespaceURI -ne 'http://www.sitemaps.org/schemas/sitemap/0.9' }).Count -ne 0) {
@@ -175,7 +177,7 @@ jobs:
           $githubNamespace = [System.Xml.XmlNamespaceManager]::new($githubPagesSitemap.NameTable)
           $githubNamespace.AddNamespace('sm', 'http://www.sitemaps.org/schemas/sitemap/0.9')
           $githubLocations = @($githubPagesSitemap.SelectNodes('//sm:url/sm:loc', $githubNamespace))
-          if ($githubLocations.Count -ne 66) { throw "GitHub Pages sitemap has $($githubLocations.Count) URLs; expected 66." }
+          if ($githubLocations.Count -ne 69) { throw "GitHub Pages sitemap has $($githubLocations.Count) URLs; expected 69." }
 
       - name: Install Playwright in temporary workspace
         shell: bash
@@ -231,9 +233,10 @@ jobs:
             expect(names).toEqual(projectDisplayNames);
             await expect(page.getByText('sythos.github.io', { exact: true })).toHaveCount(0);
             const pagesLinks = page.getByRole('link', { name: /View on GH Pages/ });
-            await expect(pagesLinks).toHaveCount(2);
+            await expect(pagesLinks).toHaveCount(3);
             expect(await pagesLinks.nth(0).getAttribute('href')).toBe('https://sythos.github.io/JS_Barcode_Universal/');
-            expect(await pagesLinks.nth(1).getAttribute('href')).toBe('https://sythos.github.io/GuloGulo/');
+            expect(await pagesLinks.nth(1).getAttribute('href')).toBe('https://sythos.github.io/Classeviva-Dashboard/');
+            expect(await pagesLinks.nth(2).getAttribute('href')).toBe('https://sythos.github.io/GuloGulo/');
             const cordialeRow = page.locator('.project-row').nth(1);
             await expect(cordialeRow.locator('.project-link--unavailable')).toHaveText('GH Pages not available');
             await expect(cordialeRow.locator('.project-summary')).toContainText('Grappa-IRC');
@@ -264,6 +267,7 @@ jobs:
               if (project === 'Classeviva-Dashboard') {
                 await expect(page.locator('.project-description')).toContainText('Home Assistant');
                 await expect(page.locator('.project-logo-panel img')).toHaveAttribute('src', '../../assets/repos/classeviva-dashboard.jpg');
+                await expect(page.getByRole('link', { name: /Documentation/ })).toHaveAttribute('href', 'https://sythos.github.io/Classeviva-Dashboard/');
               }
             });
           }

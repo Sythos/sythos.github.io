@@ -32,7 +32,7 @@ function copyPublishableRoot() {
 
 function protectOriginalPagesUrls(content) {
   const protectedUrls = [];
-  const pattern = /https:\/\/sythos\.github\.io\/(?:JS_Barcode_Universal|GuloGulo)(?:\/[^\s"'<>]*)?/g;
+  const pattern = /https:\/\/sythos\.github\.io\/(?:JS_Barcode_Universal|GuloGulo|Classeviva-Dashboard)(?:\/[^\s"'<>]*)?/g;
   const protectedContent = content.replace(pattern, (url) => {
     const placeholder = `__SYTHOS_ORIGINAL_PAGES_${protectedUrls.length}__`;
     protectedUrls.push(url);
@@ -150,7 +150,7 @@ const sourceEntries = readSitemapEntries(fs.readFileSync(sourceSitemapPath, 'utf
 const localEntries = [];
 const githubEntries = [];
 for (const entry of sourceEntries) {
-  if (/^https:\/\/sythos\.github\.io\/(?:JS_Barcode_Universal|GuloGulo)\//.test(entry.location)) {
+  if (/^https:\/\/sythos\.github\.io\/(?:JS_Barcode_Universal|GuloGulo|Classeviva-Dashboard)\//.test(entry.location)) {
     githubEntries.push(entry);
   } else if (entry.location.startsWith(`${originBase}/`)) {
     localEntries.push({ ...entry, location: entry.location.replace(originBase, cloudflareBase) });

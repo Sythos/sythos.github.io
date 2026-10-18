@@ -86,8 +86,9 @@ jobs:
           for loc in root.findall(f"{namespace}url/{namespace}loc"):
               add_url(loc.text)
 
-          # Keep the two project-site roots explicit for reduced/manual sitemaps.
+          # Keep the three project-site roots explicit for reduced/manual sitemaps.
           add_url(f"https://{host}/JS_Barcode_Universal/")
+          add_url(f"https://{host}/Classeviva-Dashboard/")
           add_url(f"https://{host}/GuloGulo/")
 
           if not urls:

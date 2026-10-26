@@ -33,7 +33,7 @@ jobs:
         run: |
           $ErrorActionPreference = 'Stop'
           $projectNames = @('JS_Barcode_Universal', 'Cordiale', 'Classeviva-Dashboard', 'GuloGulo')
-          $expectedProjectOrder = @('JS_Barcode_Universal', 'Cordiale', 'Classeviva-Dashboard', 'GuloGulo')
+          $expectedProjectOrder = @('Classeviva-Dashboard', 'JS_Barcode_Universal', 'Cordiale', 'GuloGulo')
           $localeFiles = @(
             'index.html',
             'index.de_DE.html',
@@ -146,7 +146,7 @@ jobs:
           node .github/scripts/build-cloudflare.mjs $outputRoot
           if ($LASTEXITCODE -ne 0) { throw 'Cloudflare Pages build failed.' }
 
-          $expectedProjectOrder = @('JS_Barcode_Universal', 'Cordiale', 'Classeviva-Dashboard', 'GuloGulo')
+          $expectedProjectOrder = @('Classeviva-Dashboard', 'JS_Barcode_Universal', 'Cordiale', 'GuloGulo')
           $homepage = Get-Content -LiteralPath (Join-Path $outputRoot 'index.html') -Raw -Encoding UTF8
           if ($homepage -notmatch '<link rel="canonical" href="https://sythos\.pages\.dev/">') {
             throw 'Cloudflare homepage canonical URL is incorrect.'
@@ -211,8 +211,8 @@ jobs:
           cat > /tmp/sythos-site-ci/site.ci.js <<'TEST'
           const { test, expect } = require('@playwright/test');
 
-          const projects = ['JS_Barcode_Universal', 'Cordiale', 'Classeviva-Dashboard', 'GuloGulo'];
-          const projectDisplayNames = ['JS_Barcode_Universal', 'Cordiale', 'ClasseViva Dashboard', 'GuloGulo'];
+          const projects = ['Classeviva-Dashboard', 'JS_Barcode_Universal', 'Cordiale', 'GuloGulo'];
+          const projectDisplayNames = ['ClasseViva Dashboard', 'JS_Barcode_Universal', 'Cordiale', 'GuloGulo'];
           const projectTitles = new Map([
             ['JS_Barcode_Universal', 'JS_Barcode_Universal'],
             ['Cordiale', 'Cordiale'],
@@ -234,15 +234,15 @@ jobs:
             await expect(page.getByText('sythos.github.io', { exact: true })).toHaveCount(0);
             const pagesLinks = page.getByRole('link', { name: /View on GH Pages/ });
             await expect(pagesLinks).toHaveCount(3);
-            expect(await pagesLinks.nth(0).getAttribute('href')).toBe('https://sythos.github.io/JS_Barcode_Universal/');
-            expect(await pagesLinks.nth(1).getAttribute('href')).toBe('https://sythos.github.io/Classeviva-Dashboard/');
+            expect(await pagesLinks.nth(0).getAttribute('href')).toBe('https://sythos.github.io/Classeviva-Dashboard/');
+            expect(await pagesLinks.nth(1).getAttribute('href')).toBe('https://sythos.github.io/JS_Barcode_Universal/');
             expect(await pagesLinks.nth(2).getAttribute('href')).toBe('https://sythos.github.io/GuloGulo/');
-            const cordialeRow = page.locator('.project-row').nth(1);
-            await expect(cordialeRow.locator('.project-link--unavailable')).toHaveText('GH Pages not available');
-            await expect(cordialeRow.locator('.project-summary')).toContainText('Grappa-IRC');
-            const classevivaRow = page.locator('.project-row').nth(2);
+            const classevivaRow = page.locator('.project-row').nth(0);
             await expect(classevivaRow.locator('.project-summary')).toContainText('Home Assistant');
             await expect(classevivaRow.locator('img')).toHaveAttribute('src', 'assets/repos/classeviva-dashboard.jpg');
+            const cordialeRow = page.locator('.project-row').nth(2);
+            await expect(cordialeRow.locator('.project-link--unavailable')).toHaveText('GH Pages not available');
+            await expect(cordialeRow.locator('.project-summary')).toContainText('Grappa-IRC');
             await expect(page.locator('script')).toHaveCount(0);
             expect(errors).toEqual([]);
           });

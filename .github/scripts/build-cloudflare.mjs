@@ -171,6 +171,7 @@ fs.writeFileSync(path.join(outputRoot, 'robots.txt'), [
   '',
   `Sitemap: ${cloudflareBase}/sitemap.xml`,
   `Sitemap: ${cloudflareBase}/sitemap-github.xml`,
+  'Sitemap: https://www.sythos.net/sitemap_ext.xml',
   '',
 ].join('\n'), 'utf8');
 

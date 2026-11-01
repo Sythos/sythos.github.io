@@ -123,6 +123,11 @@ jobs:
             if ([string]::IsNullOrWhiteSpace([string]$url.lastmod)) { throw "Missing lastmod: $($url.loc)" }
           }
 
+          $robots = Get-Content -LiteralPath 'robots.txt' -Raw -Encoding UTF8
+          if ($robots -notmatch '(?m)^Sitemap: https://sythos\.github\.io/sitemap\.xml\s*$' -or $robots -notmatch '(?m)^Sitemap: https://www\.sythos\.net/sitemap_ext\.xml\s*$') {
+            throw 'robots.txt is missing the required local or external sitemap directive.'
+          }
+
           $indexNowKey = '5d906a45176348999c9612db8d2118a0'
           $indexNowKeyPath = "$indexNowKey.txt"
           if (-not (Test-Path -LiteralPath $indexNowKeyPath -PathType Leaf)) { throw "Missing IndexNow key file: $indexNowKeyPath" }

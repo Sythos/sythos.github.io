@@ -4,3 +4,4 @@ Allow: /
 
 Sitemap: https://sythos.github.io/sitemap.xml
 Sitemap: https://sythos.pages.dev/sitemap-github.xml
+Sitemap: https://www.sythos.net/sitemap_ext.xml

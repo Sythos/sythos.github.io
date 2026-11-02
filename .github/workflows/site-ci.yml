@@ -124,8 +124,8 @@ jobs:
           }
 
           $robots = Get-Content -LiteralPath 'robots.txt' -Raw -Encoding UTF8
-          if ($robots -notmatch '(?m)^Sitemap: https://sythos\.github\.io/sitemap\.xml\s*$' -or $robots -notmatch '(?m)^Sitemap: https://www\.sythos\.net/sitemap_ext\.xml\s*$') {
-            throw 'robots.txt is missing the required local or external sitemap directive.'
+          if ($robots -notmatch '(?ms)^Sitemap: https://sythos\.github\.io/sitemap\.xml\r?\nSitemap: https://sythos\.pages\.dev/sitemap-github\.xml\r?\nSitemap: https://www\.sythos\.net/sitemap_ext\.xml\r?\n\r?\nUser-agent: \*\r?\nAllow: /\s*$' -or $robots -match '(?m)^Disallow:\s*$') {
+            throw 'robots.txt must start with the sitemap directives and must not contain an empty Disallow directive.'
           }
 
           $indexNowKey = '5d906a45176348999c9612db8d2118a0'

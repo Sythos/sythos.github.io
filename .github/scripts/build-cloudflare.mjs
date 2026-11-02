@@ -166,13 +166,12 @@ fs.writeFileSync(sourceSitemapPath, newSitemapXml(localEntries), 'utf8');
 fs.writeFileSync(path.join(outputRoot, 'sitemap-github.xml'), newSitemapXml(githubEntries), 'utf8');
 fs.writeFileSync(path.join(outputRoot, 'sitemap.txt'), newSitemapXml(localEntries), 'utf8');
 fs.writeFileSync(path.join(outputRoot, 'robots.txt'), [
-  'User-agent: *',
-  'Allow: /',
-  '',
   `Sitemap: ${cloudflareBase}/sitemap.xml`,
   `Sitemap: ${cloudflareBase}/sitemap-github.xml`,
   'Sitemap: https://www.sythos.net/sitemap_ext.xml',
   '',
+  'User-agent: *',
+  'Allow: /',
 ].join('\n'), 'utf8');
 
 const llmsPath = path.join(outputRoot, 'llms.txt');
